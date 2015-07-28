@@ -16,6 +16,9 @@ define ['backbone'],(Backbone) ->
         @attributes.has_cover = false
 
     getEncodedTitle: () ->
-      @attributes.title.replace(/\s/g,"+")
+      if @attributes.title
+        @attributes.title.replace(/\s/g,"+")
+      else
+        @attributes.title = "Unknown Title"
 
         
